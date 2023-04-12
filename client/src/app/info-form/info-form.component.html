@@ -1,0 +1,46 @@
+<form [formGroup]="infoForm" (submit)="handleSubmit()" class="info-form">
+  <mat-form-field class="licenseNo">
+    <mat-label>Vehicle License Number</mat-label>
+    <input matInput formControlName="licenseNo" />
+  </mat-form-field>
+
+  <mat-form-field class="type">
+    <mat-label>Vehicle Type</mat-label>
+    <input matInput formControlName="type" />
+  </mat-form-field>
+
+  <mat-form-field class="ownerName">
+    <mat-label>Vehicle Owner Name</mat-label>
+    <input matInput formControlName="ownerName" />
+  </mat-form-field>
+
+  <mat-form-field class="ownerPhone">
+    <mat-label>Vehicle Owner Phone</mat-label>
+    <input matInput formControlName="ownerPhone" />
+  </mat-form-field>
+
+  <mat-form-field class="status">
+    <mat-label>Status</mat-label>
+    <input matInput formControlName="status" />
+  </mat-form-field>
+
+  <mat-form-field class="ownerAddress">
+    <mat-label>Vehicle Owner Address</mat-label>
+    <input matInput formControlName="ownerAddress" />
+  </mat-form-field>
+
+  <mat-form-field class="entryTime">
+    <mat-label>Entry at</mat-label>
+    <input matInput formControlName="entryTime" />
+  </mat-form-field>
+
+  <mat-form-field class="exitTime">
+    <mat-label>Exit at</mat-label>
+    <input matInput formControlName="exitTime" />
+  </mat-form-field>
+
+  <mat-form-field class="parkingCharge">
+    <mat-label>Parking Charge</mat-label>
+    <input matInput formControlName="parkingCharge" />
+  </mat-form-field>
+</form>
