@@ -21,6 +21,28 @@
       "entryTime": "2023-04-11T07:14:51.000Z",
       "parkingCharge": 100,
       "id": 2
+    },
+    {
+      "licenseNo": "6789",
+      "type": "truck",
+      "ownerName": "Rafi",
+      "ownerAddress": "asguas aioshfiasfh oapug apog",
+      "ownerPhone": "34563467",
+      "status": "in",
+      "entryTime": "2023-04-12T05:42:15.073Z",
+      "parkingCharge": 100,
+      "id": 3
+    },
+    {
+      "licenseNo": "123456",
+      "type": "car",
+      "ownerName": "Ramy",
+      "ownerAddress": "asdash jhfkasf poasf saof",
+      "ownerPhone": "21412545",
+      "status": "in",
+      "entryTime": "2023-04-11T04:43:30.874Z",
+      "parkingCharge": 100,
+      "id": 4
     }
   ]
 }

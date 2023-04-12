@@ -17,7 +17,7 @@ export class VehicleListComponent {
 
   getVehicles() {
     this.vService.getAllVehicles().subscribe((vehicles) => {
-      console.log(vehicles);
+      // console.log(vehicles);
       this.vehicles = vehicles;
     });
   }
