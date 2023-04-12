@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,16 +9,27 @@ import { Router } from '@angular/router';
 })
 export class InfoFormComponent {
   infoForm = this.fb.group({
-    licenseNo: new FormControl(''),
-    type: new FormControl(''),
-    ownerName: new FormControl(''),
-    ownerPhone: new FormControl(''),
-    status: new FormControl(''),
-    ownerAddress: new FormControl(''),
-    entyTime: new FormControl(''),
-    exitTime: new FormControl(''),
-    parkingCharge: new FormControl(0),
+    licenseNo: new FormControl('', [Validators.required]),
+    type: new FormControl('', [Validators.required]),
+    ownerName: new FormControl('', [Validators.required]),
+    ownerPhone: new FormControl('', [Validators.required]),
+    status: new FormControl('', [Validators.required]),
+    ownerAddress: new FormControl('', [Validators.required]),
+    entryTime: new FormControl('', [Validators.required]),
+    exitTime: new FormControl('', [Validators.required]),
+    parkingCharge: new FormControl(100, [Validators.required]),
   });
+
+  types: { value: string; viewValue: string }[] = [
+    { value: 'microbus', viewValue: 'Microbus' },
+    { value: 'car', viewValue: 'Car' },
+    { value: 'truck', viewValue: 'Truck' },
+  ];
+
+  status: { value: string; viewValue: string }[] = [
+    { value: 'in', viewValue: 'In' },
+    { value: 'out', viewValue: 'Out' },
+  ];
 
   constructor(private fb: FormBuilder, private router: Router) {}
 
