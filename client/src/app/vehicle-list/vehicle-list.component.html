@@ -1,0 +1,20 @@
+<div class="vehicle-list-ctr">
+  <div class="vehicle-card" *ngFor="let vehicle of vehicles">
+    <p><span>Owner Name:</span> {{ vehicle.ownerName }}</p>
+    <p><span>Vehicle Type:</span> {{ vehicle.type }}</p>
+    <p><span>License Number:</span> {{ vehicle.licenseNo }}</p>
+    <p><span>Entry:</span> {{ vehicle.entryTime }}</p>
+    <p>
+      <span>Exit:</span>
+      {{ vehicle.exitTime ? vehicle.exitTime : 'Still parked' }}
+    </p>
+    <p><span>Status:</span> {{ vehicle.status }}</p>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="updateVehicle(vehicle.licenseNo)"
+    >
+      Edit
+    </button>
+  </div>
+</div>

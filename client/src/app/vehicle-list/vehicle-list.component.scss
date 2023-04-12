@@ -1,0 +1,17 @@
+.vehicle-list-ctr {
+  width: 40%;
+  height: 90vh;
+  overflow: auto;
+  padding: 2% 5%;
+
+  .vehicle-card {
+    padding: 5% 2%;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 3%;
+    span {
+      font-weight: bold;
+    }
+  }
+}

@@ -8,7 +8,7 @@
 
     <mat-form-field class="type" appearance="outline">
       <mat-label>Vehicle Type</mat-label>
-      <mat-select>
+      <mat-select formControlName="type">
         <mat-option *ngFor="let type of types" [value]="type.value">
           {{ type.viewValue }}
         </mat-option>
@@ -27,7 +27,7 @@
 
     <mat-form-field class="status" appearance="outline">
       <mat-label>Status</mat-label>
-      <mat-select>
+      <mat-select formControlName="status">
         <mat-option *ngFor="let stat of status" [value]="stat.value">
           {{ stat.viewValue }}
         </mat-option>
@@ -69,5 +69,7 @@
       <mat-label>Parking Charge</mat-label>
       <input matInput formControlName="parkingCharge" />
     </mat-form-field>
+
+    <button mat-flat-button color="primary">Submit</button>
   </form>
 </div>

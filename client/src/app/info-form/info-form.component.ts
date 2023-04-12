@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { VehicleService } from '../vehicle.service';
+import { Vehicle } from '../vehicleInfo';
 
 @Component({
   selector: 'app-info-form',
@@ -8,6 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./info-form.component.scss'],
 })
 export class InfoFormComponent {
+
+  @Input() update: boolean = false;
+
   infoForm = this.fb.group({
     licenseNo: new FormControl('', [Validators.required]),
     type: new FormControl('', [Validators.required]),
@@ -16,7 +21,7 @@ export class InfoFormComponent {
     status: new FormControl('', [Validators.required]),
     ownerAddress: new FormControl('', [Validators.required]),
     entryTime: new FormControl('', [Validators.required]),
-    exitTime: new FormControl('', [Validators.required]),
+    exitTime: new FormControl(''),
     parkingCharge: new FormControl(100, [Validators.required]),
   });
 
@@ -31,34 +36,50 @@ export class InfoFormComponent {
     { value: 'out', viewValue: 'Out' },
   ];
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private vService: VehicleService) {}
 
   ngOnInit(): void {}
 
-  // handleSubmit() {
-  //   const { email, password } = this.loginForm.value;
-  //   if (email && password) {
-  //     this.auth.login(email, password).subscribe({
-  //       next: (res) => {
-  //         localStorage.setItem('user', JSON.stringify(res));
-  //         const user = res.body;
-  //         if (user && user.userType === 'client') {
-  //           this.router.navigate(['client-search']);
-  //           // console.log('user', user.userType);
-  //         } else if (user && user.userType === 'lawyer') {
-  //           this.router.navigate(['lawyer-dashboard']);
-  //           // console.log('user', user.userType);
-  //         } else this.router.navigate(['admin-dashboard']);
-  //       },
-  //       error: (err) => {
-  //         this.errorMessage = err.error;
-  //         setTimeout(() => {
-  //           this.errorMessage = '';
-  //         }, 3000);
-  //       },
-  //     });
-  //   }
-  // }
+  handleSubmit() {
+    // console.log(this.infoForm.value);
 
-  handleSubmit() {}
+    const {
+      licenseNo,
+      type,
+      ownerName,
+      ownerAddress,
+      ownerPhone,
+      status,
+      entryTime,
+      parkingCharge,
+    } = this.infoForm.value;
+
+    if (
+      licenseNo &&
+      type &&
+      ownerName &&
+      ownerAddress &&
+      ownerPhone &&
+      status &&
+      entryTime &&
+      parkingCharge
+    ) {
+      if (!this.update)
+      this.vService
+      .createVehicleInfo({
+        licenseNo,
+        type,
+        ownerName,
+        ownerAddress,
+        ownerPhone,
+        status,
+        entryTime,
+        parkingCharge,
+      })
+      .subscribe((v) => v);
+    } else {
+      
+    }
+  }
 }
+  

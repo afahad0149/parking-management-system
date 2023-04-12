@@ -1,1 +1,26 @@
-{}
+{
+  "vehicles": [
+    {
+      "licenseNo": "1234",
+      "type": "car",
+      "ownerName": "Akib",
+      "ownerAddress": "yadfaysdf ufg asiu f",
+      "ownerPhone": "1234",
+      "status": "in",
+      "entryTime": "2023-04-12T02:55:07.580Z",
+      "parkingCharge": 100,
+      "id": 1
+    },
+    {
+      "licenseNo": "2345",
+      "type": "microbus",
+      "ownerName": "Rejaul",
+      "ownerAddress": "aywfga fgiaugf as fg fasip",
+      "ownerPhone": "313125435",
+      "status": "in",
+      "entryTime": "2023-04-11T07:14:51.000Z",
+      "parkingCharge": 100,
+      "id": 2
+    }
+  ]
+}

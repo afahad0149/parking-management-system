@@ -14,9 +14,18 @@ import {
   NgxMatDatetimePickerModule,
   NgxMatNativeDateModule,
 } from '@angular-material-components/datetime-picker';
+import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, InfoFormComponent],
+  declarations: [
+    AppComponent,
+    InfoFormComponent,
+    VehicleListComponent,
+    DashboardComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -29,6 +38,8 @@ import {
     MatNativeDateModule,
     NgxMatDatetimePickerModule,
     NgxMatNativeDateModule,
+    MatButtonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
